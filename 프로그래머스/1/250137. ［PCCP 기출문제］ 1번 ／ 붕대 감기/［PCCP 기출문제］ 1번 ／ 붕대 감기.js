@@ -37,22 +37,12 @@ function solution(bandage, health, attacks) {
             }
         } else {
             if (curHealth < health) {
-                if (health - curHealth > x) {
-                    curHealth += x;
-                } else {
-                    curHealth += (health - curHealth);
-                }
+                curHealth += Math.min(x, health-curHealth);
             }
-            
             success += 1;
             if (success == t) {
-                
                 if (curHealth < health) {
-                    if (health - curHealth > y) {
-                        curHealth += y;
-                    } else {
-                        curHealth += (health - curHealth);
-                    }
+                    curHealth += Math.min(y, health-curHealth);
                 }
                 success = 0;
             }
