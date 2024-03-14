@@ -36,9 +36,6 @@ function solution(bandage, health, attacks) {
                 break;
             }
         } else {
-            // c = 37, h = 40, x = 4
-            // c += h-c
-            
             if (curHealth < health) {
                 if (health - curHealth > x) {
                     curHealth += x;
@@ -47,9 +44,6 @@ function solution(bandage, health, attacks) {
                 }
             }
             
-            // if (curHealth < health) {
-            //     curHealth += x;
-            // }
             success += 1;
             if (success == t) {
                 
@@ -60,10 +54,6 @@ function solution(bandage, health, attacks) {
                         curHealth += (health - curHealth);
                     }
                 }
-                
-                // if (curHealth < health) {
-                //     curHealth += y;
-                // }
                 success = 0;
             }
         }
