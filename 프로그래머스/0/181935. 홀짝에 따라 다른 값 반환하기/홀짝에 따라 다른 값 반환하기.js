@@ -8,9 +8,9 @@ function solution(n) {
         nums = Array.from({ length: n/2 }, (_, i) => ((i+1)*2)**2);
     }
     
-    nums.forEach(num => {
-        answer += num;
-    })
-
+    // nums.forEach(num => {
+    //     answer += num;
+    // })
+    answer = nums.reduce((acc, cur) => acc+cur, 0);
     return answer;
 }
