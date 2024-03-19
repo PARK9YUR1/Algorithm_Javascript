@@ -1,5 +1,7 @@
 function solution(n) {
-    const nums = n.toString().split("").reverse();
+    const nums = n.toString().split("");
     nums.sort((a, b) => b-a);
-    return Number(nums.join(''));
+    const answer = Number(nums.join(''));
+
+    return answer;
 }
