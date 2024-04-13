@@ -1,4 +1,3 @@
 function solution(array, n) {
-    const newArr = array.filter(x => x === n);
-    return newArr.length;
+    return array.filter(x => x === n).length;
 }
