@@ -1,4 +1,6 @@
 function solution(numbers) {
     numbers.sort((a, b) => b - a);
-    return numbers[0] * numbers[1];
+    
+    const [mx1, mx2] = numbers;
+    return mx1 * mx2;
 }
