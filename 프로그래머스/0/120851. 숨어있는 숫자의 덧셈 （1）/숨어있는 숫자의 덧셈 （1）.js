@@ -1,11 +1,4 @@
 function solution(my_string) {
-    let answer = 0;
-    
-    for (str of my_string) {
-        if (/^\d$/.test(str)) {
-            answer += parseInt(str);
-        }
-    }
-    
-    return answer;
+    const nums = my_string.replace(/[^0-9]/g, '').split('');
+    return nums.reduce((acc, cur) => acc + ~~(cur), 0);
 }
