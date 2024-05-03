@@ -8,13 +8,9 @@ function solution(hp) {
     }
     
     while (hp) {
-        if (hp >= 5) {          // 장군개미
-            calc(5);
-        } else if (hp >= 3) {   // 병정개미
-            calc(3);
-        } else {                // 일개미
-            calc(1);
-        }
+        if      (hp >= 5) { calc(5) } 
+        else if (hp >= 3) { calc(3) }
+        else              { calc(1) }
     }
     
     return answer;
