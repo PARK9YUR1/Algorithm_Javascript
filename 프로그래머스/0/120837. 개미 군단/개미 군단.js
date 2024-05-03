@@ -3,7 +3,7 @@ function solution(hp) {
     
     const calc = (power) => {
         const troops = ~~(hp/power);
-        hp -= troops * power;
+        hp %= power;
         answer += troops;
     }
     
