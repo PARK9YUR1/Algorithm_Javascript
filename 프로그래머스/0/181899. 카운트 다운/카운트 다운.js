@@ -1,9 +1,7 @@
 function solution(start, end_num) {
     let answer = [];
-    let num = start;
-    while (num >= end_num) {
+    for (let num=start; num>=end_num; num--) {
         answer.push(num);
-        num--;
     }
     return answer;
 }
