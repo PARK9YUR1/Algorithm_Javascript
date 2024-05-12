@@ -1,16 +1,12 @@
 function solution(n, control) {
+    const ctrl = {
+        "w": 1,
+        "s": -1,
+        "d": 10, 
+        "a": -10
+    }
+    
     return control.split("")
-                  .map(c => {
-                        switch (c) {
-                            case "w":
-                                return 1;
-                            case "s":
-                                return -1;
-                            case "d":
-                                return 10;
-                            case "a":
-                                return -10;
-                        }
-                    })
+                  .map(c => ctrl[c])
                   .reduce((acc, cur) => acc + cur, n);
 }
