@@ -4,4 +4,10 @@ function solution(n_str) {
         answer = answer.slice(1);
     }
     return answer;
+    
+    // for (i in n_str) {
+    //     if (n_str[i] !== "0") {
+    //         return n_str.slice(i);
+    //     }
+    // }
 }
