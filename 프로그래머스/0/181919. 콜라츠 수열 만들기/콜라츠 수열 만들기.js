@@ -7,11 +7,7 @@ function solution(n) {
             break;
         }
         
-        if (num % 2) {
-            answer.push(3 * num + 1);
-        } else {
-            answer.push(num / 2);
-        }
+        answer.push(num%2 ? 3*num+1 : num/2);
     }
     
     return answer;
