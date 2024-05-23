@@ -1,3 +1,3 @@
 function solution(num, k) {
-    return (" " + num.toString()).split("").indexOf(k.toString());
+    return (" " + num).split("").indexOf(k.toString());
 }
