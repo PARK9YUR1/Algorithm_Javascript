@@ -1,10 +1,10 @@
 # [level 0] 가까운 수 - 120890 
 
-[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/120890) 
+[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/120890#) 
 
 ### 성능 요약
 
-메모리: 33.5 MB, 시간: 0.05 ms
+메모리: 33.6 MB, 시간: 0.03 ms
 
 ### 구분
 
@@ -16,7 +16,7 @@
 
 ### 제출 일자
 
-2024년 05월 24일 14:50:59
+2024년 05월 24일 14:58:05
 
 ### 문제 설명
 
