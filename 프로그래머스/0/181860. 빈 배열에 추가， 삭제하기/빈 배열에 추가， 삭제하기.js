@@ -2,11 +2,18 @@ function solution(arr, flag) {
     let answer = [];
     
     flag.map((bool, i) => {
+        let [t, f] = [arr[i]*2, arr[i]];
+        
         if (bool) {
-            // answer = [...answer, ...Array(arr[i]*2).fill(arr[i])];
-            answer.push(...Array(arr[i]*2).fill(arr[i]));
+            while (t) {
+                answer.push(arr[i]);
+                t--;
+            }
         } else {
-            answer = answer.slice(0, answer.length-arr[i]);
+            while (f) {
+                answer.pop();
+                f--;
+            }
         }
     })
     
