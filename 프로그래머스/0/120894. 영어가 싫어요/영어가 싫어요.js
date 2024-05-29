@@ -4,9 +4,9 @@ function solution(numbers) {
         "five": 5, "six": 6, "seven": 7, "eight": 8, "nine": 9
     }
     
-    
     for (num of [...Object.keys(nums)]) {
-        numbers = numbers.replaceAll(num, nums[num]);
+        // numbers = numbers.replaceAll(num, nums[num]);
+        numbers = numbers.split(num).join(nums[num]);
     }
     return parseInt(numbers);
 }
