@@ -8,10 +8,8 @@ function solution(sides) {
     }
     
     // c가 max -> c < a+b
-    let c = b;
-    while (c < a+b) {
+    for (let c=b; c<a+b; c++) {
         res++;
-        c++;
     }
     
     return res;
