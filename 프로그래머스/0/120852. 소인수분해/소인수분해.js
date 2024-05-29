@@ -8,12 +8,10 @@ function solution(n) {
                 break;
             } else {
                 num /= i;
-                if (!answer.includes(i)) {
-                    answer.push(i);
-                }
+                answer.push(i);
             }
         }
     }
     
-    return answer;
+    return [... new Set(answer)];
 }
