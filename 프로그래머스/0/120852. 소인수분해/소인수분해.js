@@ -3,13 +3,9 @@ function solution(n) {
     const answer = [];
     
     for (let i=2; i<=n; i++) {
-        while (true) {
-            if (num % i) {
-                break;
-            } else {
-                num /= i;
-                answer.push(i);
-            }
+        while (!(num % i)) {
+            num /= i;
+            answer.push(i);
         }
     }
     
