@@ -1,4 +1,12 @@
 function solution(sides) {
+    const a = sides.sort((a, b) => a - b)[0];
+    
+    // b가 최대 : b-a < c < b    ==> a-1
+    // c가 최대 -> b <= c < a+b  ===> a
+    
+    return 2*a - 1;
+    
+    /*
     const [a, b] = sides.sort((a, b) => a - b);
     let res = 0;
     
@@ -13,4 +21,5 @@ function solution(sides) {
     }
     
     return res;
+    */
 }
