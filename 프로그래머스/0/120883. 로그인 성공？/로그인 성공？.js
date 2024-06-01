@@ -1,8 +1,8 @@
 function solution(id_pw, db) {
-    const [id, pw] = id_pw;
+    const [ID, PW] = id_pw;
     
-    const idCorrect = db.filter(([dbId, dbPw]) => dbId === id);
-    const pwCorrect = idCorrect.filter(([dbId, dbPw]) => dbPw === pw);
+    const correctId = db.filter(([id, pw]) => ID === id);
+    const correctPw = correctId.filter(([id, pw]) => PW === pw);
     
-    return idCorrect.length ? pwCorrect.length ? "login" : "wrong pw" : "fail";
+    return correctId.length ? correctPw.length ? "login" : "wrong pw" : "fail"; 
 }
