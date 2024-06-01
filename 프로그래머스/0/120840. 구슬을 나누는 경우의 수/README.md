@@ -1,10 +1,10 @@
 # [level 0] 구슬을 나누는 경우의 수 - 120840 
 
-[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/120840) 
+[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/120840#) 
 
 ### 성능 요약
 
-메모리: 33.6 MB, 시간: 0.17 ms
+메모리: 33.5 MB, 시간: 0.06 ms
 
 ### 구분
 
@@ -16,7 +16,7 @@
 
 ### 제출 일자
 
-2024년 06월 01일 23:28:28
+2024년 06월 01일 23:35:33
 
 ### 문제 설명
 
