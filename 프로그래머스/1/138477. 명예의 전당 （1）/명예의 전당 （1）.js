@@ -4,11 +4,11 @@ function solution(k, score) {
     
     for (s of score) {
         if (rank.length < k) {
-            rank.push(s);
+            rank = [...rank, s].sort((a, b) => a - b);
         } else {
             rank = [...rank, s].sort((a, b) => a - b).slice(1);
         }
-        answer.push(Math.min(...rank));
+        answer.push(rank[0]);
     }
     
     return answer;
