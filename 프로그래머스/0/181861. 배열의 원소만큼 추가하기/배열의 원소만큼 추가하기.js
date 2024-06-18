@@ -10,4 +10,5 @@ function solution(arr) {
     }
     
     return answer;
+    // return arr.reduce((nums, num) => [...nums, ...Array(num).fill(num)], [])
 }
