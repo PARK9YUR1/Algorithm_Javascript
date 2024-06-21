@@ -1,14 +1,7 @@
 function solution(n) {
     let arr = Array(n).fill().map((_) => Array(n).fill(0));
-
-    const dir1 = {
-        "up": [-1, 0], "down": [1, 0],
-        "left": [0, -1], "right": [0, 1]
-    };
     
     // 우 -> 하 -> 좌 -> 상
-    
-    // const dir = [[-1, 0], [1, 0], [0, -1], [0, 1]];
     const dir = [[0, 1], [1, 0], [0, -1], [-1, 0]];
     let d = 0;
     let [x, y] = [0, 0];
