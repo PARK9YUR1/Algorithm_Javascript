@@ -1,8 +1,10 @@
 function solution(park, routes) {
     park = park.map(p => p.split(""));
     
+    
     const [N, M] = [park.length, park[0].length];
     let [x, y] = [0, 0];
+    
     
     for (let i=0; i<N; i++) {
         for (let j=0; j<M; j++) {
@@ -12,6 +14,7 @@ function solution(park, routes) {
         }
     }
     
+    
     const direction = {
         "N": [-1, 0],
         "S": [1, 0],
@@ -19,18 +22,21 @@ function solution(park, routes) {
         "E": [0, 1]
     };
     
-    const move = (x, y, mx, my, nx, ny) => {
-        while (true) {
-            if (x === nx && y === ny) break;
-            
+    
+    const move = (x, y, mx, my, dis) => {
+        let i = 0;
+        
+        while (i < dis) {
             [x, y] = [x+mx, y+my];
             if (park[x][y] === "X") {
                 return false;
             }
+            i++;
         }
         
         return true;
     }
+    
     
     for (route of routes) {
         const [dir, dis] = route.split(" ");
@@ -41,12 +47,13 @@ function solution(park, routes) {
         if (nx < 0 || nx >= N || ny < 0 || ny >= M || park[nx][ny] === "X") {
             continue;
         }
-        if (!move(x, y, mx, my, nx, ny)) {
+        if (!move(x, y, mx, my, Number(dis))) {
             continue;
         }
         
         [x, y] = [nx, ny];
     }
+    
     
     return [x, y];
 }
