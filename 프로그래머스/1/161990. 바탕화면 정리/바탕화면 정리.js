@@ -10,7 +10,7 @@ function solution(wallpaper) {
             mnx = Math.min(mnx, i);
             mxx = Math.max(mxx, i);
             mny = Math.min(mny, idx);
-            mxy = Math.max(mxy, (idx === lastIdx) ? idx : lastIdx);
+            mxy = Math.max(mxy, lastIdx);
         }
     }
     
