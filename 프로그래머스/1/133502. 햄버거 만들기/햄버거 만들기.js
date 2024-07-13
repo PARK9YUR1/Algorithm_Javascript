@@ -22,7 +22,7 @@ function solution(ingredient) {
                 hamburger++;
             } else {
                 if (cur === "1") {
-                cook.push(cur);
+                    cook.push(cur);
                 } else {
                     cook = [];
                 }
