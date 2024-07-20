@@ -10,11 +10,18 @@ function solution(babbling) {
             }
         }
         
-        babble =  babble.split("aya").filter(b => b).join(" ")
-                        .split("ye").filter(b => b).join(" ")
-                        .split("woo").filter(b => b).join(" ")
-                        .split("ma").filter(b => b).join("")
-                        .split(" ").join("");
+        // babble =  babble.split("aya").filter(b => b).join(" ")
+        //                 .split("ye").filter(b => b).join(" ")
+        //                 .split("woo").filter(b => b).join(" ")
+        //                 .split("ma").filter(b => b).join("")
+        //                 .split(" ").join("");
+        
+        babble =  babble.replaceAll("aya", " ")
+                        .replaceAll("ye", " ")
+                        .replaceAll("woo", " ")
+                        .replaceAll("ma", " ")
+                        .replaceAll(" ", "");
+        
         
         return babble.length ? false : true;
     })
