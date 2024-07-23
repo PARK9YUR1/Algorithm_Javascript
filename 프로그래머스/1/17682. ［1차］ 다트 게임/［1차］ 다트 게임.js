@@ -1,5 +1,5 @@
 function solution(dartResult) {
-    let score = [];
+    let score = [0];
     let N = 0;
     let cur = -1;
     
@@ -20,12 +20,10 @@ function solution(dartResult) {
                 N++;
             } else {
                 if (v === "*") {
-                    if (N > 1) {
-                        score[N-2] *= 2;
-                    }
                     score[N-1] *= 2;
+                    score[N] *= 2;
                 } else {
-                    score[N-1] *= (-1);
+                    score[N] *= (-1);
                 }
             }
             cur = -1;
