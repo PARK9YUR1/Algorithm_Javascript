@@ -12,11 +12,11 @@ function solution(numbers, target) {
             return;
         }
         
-        calc(i+1, sum - 2 * cur)
-        calc(i+1, sum)
+        calc(i+1, sum - cur)
+        calc(i+1, sum + cur)
     }
     
-    calc(0, numbers.reduce((acc, cur) => acc+cur, 0))
+    calc(0, 0)
     
     return answer;
 }
