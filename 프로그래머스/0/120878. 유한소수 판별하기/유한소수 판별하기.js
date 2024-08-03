@@ -1,16 +1,8 @@
 function solution(a, b) {
-    // 최대공약수
-    let num = Math.min(a, b);
-    while (num) {
-        if (a%num || b%num) {
-            num--;
-        } else {
-            break;
-        }
+    if (!(b % a)) {
+        b /= a;
+        a = 1;
     }
-    
-    a = a/num;
-    b = b/num;
     
     while (true) {
         if ((b%2 && b%5) || b === 1) {
