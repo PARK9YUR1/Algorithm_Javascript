@@ -1,17 +1,28 @@
-function solution(n, lost, reserve) {  // 학생수, 도난, 여벌체육복
+function solution(n, lost, reserve) {  // 학생수, 도난당한 학생번호, 여벌체육복 학생번호
     let answer = n;
-    const lostAndReserve = reserve.filter(r => lost.includes(r));  // 도난 & 여벌체육복
-    reserve = Array(n+2).fill().map((_, i) => reserve.includes(i) && !lost.includes(i) ? 1 : 0);
+    const lostAndReserve = reserve.filter(r => lost.includes(r));  // 도난도 당하고 여벌체육복도 있는 학생번호
     lost = lost.filter(l => !lostAndReserve.includes(l)).sort((a, b) => a - b);
+    reserve = reserve.filter(r => !lostAndReserve.includes(r) && ((r > 1 && lost.includes(r-1)) || (r < n && lost.includes(r+1))))
+                     .sort((a, b) => a - b);
     answer -= lost.length;
     
-    lost.forEach(l => {
-        if (reserve[l-1]) {
+    lost.forEach((num) => {
+        const idx1 = reserve.indexOf(num-1);
+        const idx2 = reserve.indexOf(num+1);
+        
+        if (num === 1 && idx2 > -1) {
             answer++;
-            reserve[l-1] = 0;
-        } else if (reserve[l+1]) {
+            reserve = reserve.slice(idx2+1);
+        } else if (num === n && idx1 > -1) {
             answer++;
-            reserve[l+1] = 0;
+        } else {
+            if (idx1 > -1) {
+                answer++;
+                reserve = reserve.slice(idx1+1);
+            } else if (idx2 > -1) {
+                answer++;
+                reserve = reserve.slice(idx2+1);
+            }
         }
     })
     
