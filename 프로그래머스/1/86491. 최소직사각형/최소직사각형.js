@@ -1,20 +1,16 @@
 function solution(sizes) {
-    // w > h 가 되도록 각 size 정렬
-    sizes = sizes.map(size => size.sort((w, h) => (h - w)));
+    let [mxW, mxH] = [0, 0];
     
-    function createSizeArray(i) {
-        return sizes.map(size => size[i]);
+    function getMaxSize(mx, v) {
+        return Math.max(mx, v);
     }
+    
+    sizes.forEach(size => {
+        const [w, h] = size.sort((w, h) => (h - w));
         
-    function getMaxSize(array) {
-        return Math.max(...array);
-    }
-    
-    let widths = createSizeArray(0);
-    let heights = createSizeArray(1);
-    
-    const mxW = getMaxSize(widths);
-    const mxH = getMaxSize(heights);
+        mxW = getMaxSize(mxW, w);
+        mxH = getMaxSize(mxH, h);
+    });
     
     return mxW * mxH;
 }
