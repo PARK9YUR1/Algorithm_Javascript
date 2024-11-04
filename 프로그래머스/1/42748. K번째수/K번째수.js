@@ -1,10 +1,15 @@
 function solution(array, commands) {
-    var answer = [];
-    for (command of commands) {
-        const [i, j, k] = command;
-        let arr = array.slice(i-1, j);
-        arr.sort((a, b) => a - b);
+    let answer = [];
+    
+    function getNumber(i, j, k) {
+        const arr = array.slice(i-1, j).sort((a, b) => (a - b));
         answer.push(arr[k-1]);
     }
+    
+    for (command of commands) {
+        const [i, j, k] = command;
+        getNumber(i, j, k);
+    }
+    
     return answer;
 }
