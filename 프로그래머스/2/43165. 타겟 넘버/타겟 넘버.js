@@ -1,22 +1,20 @@
 function solution(numbers, target) {
-    const N = numbers.length;
     let answer = 0;
-    
-    function calc(i, sum) {
-        const cur = numbers[i];
-        
-        if (i === N) {
-            if (sum === target) {
-                answer++;
-            }
-            return;
+    const length = numbers.length;
+
+    function dfs(i, sum) {
+      if (i === length) {
+        if (sum === target) {
+          answer++;
         }
-        
-        calc(i+1, sum - cur)
-        calc(i+1, sum + cur)
+        return;
+      }
+
+      dfs(i+1, sum-numbers[i]);
+      dfs(i+1, sum+numbers[i]);
     }
-    
-    calc(0, 0)
+
+    dfs(0, 0);
     
     return answer;
 }
