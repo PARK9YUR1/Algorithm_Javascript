@@ -2,7 +2,7 @@ function solution(n, times) {
     times.sort((a, b) => a - b);
     let [mn, mx] = [1, times[times.length - 1] * n];
     
-    while (mn < mx) {
+    while (mn <= mx) {
         const mid = parseInt((mn + mx) / 2);
         
         // 심사 받을 수 있는 사람 수
@@ -11,11 +11,11 @@ function solution(n, times) {
         }, 0);
         
         if (cnt >= n) {
-            mx = mid;
+            mx = mid - 1;
         } else {
             mn = mid + 1;
         }
     }
     
-    return mx;
+    return mn;
 }
