@@ -6,11 +6,11 @@ function solution(n, times) {
         const mid = parseInt((mn + mx) / 2);
         
         // 심사 받을 수 있는 사람 수
-        const sum = times.reduce((acc, cur) => {
+        const cnt = times.reduce((acc, cur) => {
             return acc + parseInt(mid / cur);
         }, 0);
         
-        if (sum >= n) {
+        if (cnt >= n) {
             mx = mid;
         } else {
             mn = mid + 1;
