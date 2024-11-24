@@ -3,15 +3,15 @@ function solution(answers) {
     const result = [];
     
     const len = answers.length;
-    const students = [
+    const supojas = [
         [1, 2, 3, 4, 5],
         [2, 1, 2, 3, 2, 4, 2, 5],
         [3, 3, 1, 1, 2, 2, 4, 4, 5, 5],
     ];
     
-    students.forEach((student, i) => {
-        students[i] = Array(Math.ceil(len/student.length)).fill(student).flat();
-        result.push(answers.filter((answer, idx) => answer === students[i][idx]).length);
+    supojas.forEach((supoja) => {
+        const spj = Array(Math.ceil(len/supoja.length)).fill(supoja).flat();
+        result.push(answers.filter((answer, i) => answer === spj[i]).length);
     })
     
     const mx = Math.max(...result);
